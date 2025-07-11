@@ -1,8 +1,7 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
 .logo {
@@ -39,4 +38,100 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.app-footer {
+  background: #282c34;
+  text-align: center;
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.products-grid {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0 4rem 0;
+  padding: 0 2vw;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+.product-card {
+  border-radius: 8px;
+  background: #282c34;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 1rem;
+  text-align: center;
+  transition: box-shadow 0.2s;
+  min-width: 200px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.product-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.product-image {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.app-header {
+  width: 100vw;
+  background: #222831;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  margin-bottom: 1rem;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 2vw;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-title {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #00bcd4;
 }
