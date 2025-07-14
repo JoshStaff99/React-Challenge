@@ -2,6 +2,7 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
 import products from './components/products';
+import SearchBar from './components/SearchBar';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -19,12 +20,9 @@ function App() {
             <img src={reactLogo} className="logo react" alt="React logo" />
             <span className="nav-title">React Challenge</span>
           </div>
-          <input
-            type="text"
-            placeholder="Search products..."
+          <SearchBar
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="search-bar"
           />
         </nav>
       </header>

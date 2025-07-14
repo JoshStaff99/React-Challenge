@@ -1,13 +1,13 @@
- import React from 'react';
+import React from 'react';
 
-const SearchBar = ({ searchQuery, setSearchQuery }) => {
+const SearchBar = ({ value, onChange }) => {
   return (
     <input
       type="text"
-      placeholder="Search..."
-      value={searchQuery}
-      onChange={(e) => setSearchQuery(e.target.value)}
-      style={{ padding: '8px', fontSize: '16px', width: '100%' }}
+      placeholder="Search products..."
+      value={value}
+      onChange={onChange}
+      className="search-bar"
     />
   );
 };
