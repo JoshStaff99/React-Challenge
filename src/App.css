@@ -40,8 +40,10 @@ body, html, #root {
   color: #888;
 }
 
+/* Footer */
+
 .app-footer {
-  background: #282c34;
+  background: #222831;
   text-align: center;
   padding: 0.75rem 0;
   font-size: 0.95rem;
@@ -50,6 +52,8 @@ body, html, #root {
   left: 0;
   bottom: 0;
 }
+
+/* Products */
 
 .products-grid {
   width: 100vw;
@@ -87,6 +91,15 @@ h2 {
   text-align: center;
   margin-top: 2rem;
 }
+
+@media (min-width: 768px) {
+  .products-grid {
+    width: calc(100% - 200px);
+    float: right;
+  }
+}
+
+/* App Nav and header */
 
 .app-header {
   width: 100vw;
@@ -134,6 +147,32 @@ h2 {
 
 .nav-links a:hover {
   color: #00bcd4;
+}
+
+/* SideBar */
+
+.side-bar {
+    height: 100vh;
+    min-height: 100%;
+    float: left;
+    background: #282c34;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    width: 200px;
+    color: #ffffff;
+}
+
+.side-bar a {
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .side-bar {
+    display: flex;
+  }
 }
 
 /* SearchBar */

@@ -29,6 +29,8 @@ function App() {
         </nav>
       </header>
 
+      <div className='side-bar'>Hello World</div>
+
       <h2 id="products">Products</h2>
 
       {filteredProducts.length === 0 && (
