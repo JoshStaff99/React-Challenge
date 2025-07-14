@@ -1,9 +1,15 @@
-
-import reactLogo from './assets/react.svg'
-import './App.css'
-import products from './components/products'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import './App.css';
+import products from './components/products';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredProducts = products.filter(product =>
+    product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    product.category.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <>
@@ -13,14 +19,24 @@ function App() {
             <img src={reactLogo} className="logo react" alt="React logo" />
             <span className="nav-title">React Challenge</span>
           </div>
-          <ul className="nav-links">
-            <li><a href="#products">Products</a></li>
-          </ul>
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-bar"
+          />
         </nav>
       </header>
+
       <h2 id="products">Products</h2>
+
+      {filteredProducts.length === 0 && (
+        <p className="no-matches">No matches found.</p>
+      )}
+
       <div className="products-grid">
-        {products.map(product => (
+        {filteredProducts.map(product => (
           <div key={product.id} className="product-card">
             <img src={product.imageUrl} alt={product.name} className="product-image" />
             <h3>{product.name}</h3>
@@ -31,11 +47,12 @@ function App() {
           </div>
         ))}
       </div>
+
       <footer className="app-footer">
         <p>&copy; 2025 React Challenge</p>
       </footer>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

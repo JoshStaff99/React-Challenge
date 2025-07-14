@@ -135,3 +135,23 @@ h2 {
 .nav-links a:hover {
   color: #00bcd4;
 }
+
+/* SearchBar */
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  /* margin: 10px auto 20px; */
+  display: block;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.no-matches {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 20px;
+}
