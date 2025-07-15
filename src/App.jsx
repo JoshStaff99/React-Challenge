@@ -27,7 +27,11 @@ function App() {
         </nav>
       </header>
 
-      <div className='side-bar'>Hello World</div>
+      <div className='fake-header'></div>
+
+      <div className='side-bar'>
+        <h1>Hello World!</h1>
+      </div>
 
       <h2 id="products">Products</h2>
 
