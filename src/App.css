@@ -93,7 +93,7 @@ h2 {
 
 @media (min-width: 768px) {
   .products-grid {
-    width: calc(100% - 200px);
+    width: calc(100% - 300px);
     float: right;
   }
 }
@@ -164,7 +164,7 @@ h2 {
     min-height: 100%;
     float: left;
     background: #282c34;
-    z-index: 2;
+    z-index: 0;
     margin: 0;
     padding: 0;
     display: none;
@@ -172,6 +172,7 @@ h2 {
     width: 200px;
     color: #ffffff;
     position:fixed;
+    top: 140px;
 }
 
 .side-bar a {
@@ -182,6 +183,27 @@ h2 {
   .side-bar {
     display: flex;
   }
+}
+
+.side-bar {
+  width: 250px;
+  padding: 1rem;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.price-inputs input {
+  width: 80px;
+  padding: 4px 8px;
+  margin-right: 4px;
 }
 
 /* SearchBar */
