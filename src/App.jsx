@@ -30,7 +30,7 @@ function App() {
       <div className='fake-header'></div>
 
       <div className='side-bar'>
-        <h1>Hello World!</h1>
+        <h2>Filter By</h2>
       </div>
 
       <h2 id="products">Products</h2>
