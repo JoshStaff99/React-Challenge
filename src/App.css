@@ -45,10 +45,12 @@ body, html, #root {
 .app-footer {
   background: #222831;
   text-align: center;
+  justify-content: center;
+  display: flex;
   padding: 0.75rem 0;
   font-size: 0.95rem;
   width: 100vw;
-  position: fixed;
+  position: static;
   left: 0;
   bottom: 0;
 }
@@ -63,6 +65,7 @@ body, html, #root {
   padding: 0px 20px 60px 20px;
   box-sizing: border-box;
   width: 100%;
+  min-height: 100vh;
 }
 
 .product-card {
@@ -75,6 +78,7 @@ body, html, #root {
   min-width: 200px;
   max-width: 350px;
   margin: 0 auto;
+  max-height: fit-content;
 }
 .product-card:hover {
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
@@ -157,6 +161,57 @@ h2 {
   height: 150px;
 }
 
+/* --- Burger Icon --- */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.burger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+/* Nav Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav-menu.open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .nav-bar {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-menu {
+    display: flex !important;
+  }
+}
+
 /* SideBar */
 
 .side-bar {
@@ -212,11 +267,16 @@ h2 {
   width: 100%;
   max-width: 400px;
   padding: 10px;
-  /* margin: 10px auto 20px; */
   display: block;
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
+}
+
+@media (min-width: 768px) {
+  .search-bar {
+    display: block;
+  }
 }
 
 .no-matches {

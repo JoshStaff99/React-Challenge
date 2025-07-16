@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import './App.css';
 import products from './components/products';
-import SearchBar from './components/SearchBar';
 import SideBar from './components/SideBar';
+import AppHeader from './components/AppHeader';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [menuOpen, setMenuOpen] = useState(false); // 🍔 new state
   const [filters, setFilters] = useState({
     inStock: false,
     category: '',
@@ -30,18 +30,12 @@ function App() {
 
   return (
     <>
-      <header className="app-header">
-        <nav className="nav-bar">
-          <div className="nav-logo">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-            <span className="nav-title">React Challenge</span>
-          </div>
-          <SearchBar
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </nav>
-      </header>
+      <AppHeader
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
 
       <div className='fake-header'></div>
 
