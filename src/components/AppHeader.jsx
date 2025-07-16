@@ -9,6 +9,12 @@ function AppHeader({ menuOpen, setMenuOpen, searchQuery, setSearchQuery }) {
           <img src={reactLogo} className="logo react" alt="React logo" />
           <span className="nav-title">React Challenge</span>
         </div>
+        <div className='search-bar-large'>
+        <SearchBar
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        </div>
         <div className="burger" onClick={() => setMenuOpen(!menuOpen)}>
           <div className="line" />
           <div className="line" />

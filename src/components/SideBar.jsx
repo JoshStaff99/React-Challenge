@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SideBar({ filters, setFilters, categories }) {
+function SideBar({ filters, setFilters, categories, sortOption, setSortOption }) {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFilters(prev => ({
@@ -19,7 +19,6 @@ function SideBar({ filters, setFilters, categories }) {
     <div className="side-bar">
       <h2>Filter By</h2>
 
-      {/* In Stock */}
       <div className="filter-group">
         <label>
           <input
@@ -32,7 +31,6 @@ function SideBar({ filters, setFilters, categories }) {
         </label>
       </div>
 
-      {/* Category Dropdown */}
       <div className="filter-group">
         <label htmlFor="category">Category:</label>
         <select
@@ -48,7 +46,6 @@ function SideBar({ filters, setFilters, categories }) {
         </select>
       </div>
 
-      {/* Price Range */}
       <div className="filter-group">
         <label>Price Range:</label>
         <div className="price-inputs">
@@ -68,6 +65,21 @@ function SideBar({ filters, setFilters, categories }) {
             min="0"
           />
         </div>
+
+        <div className="filter-group">
+          <label htmlFor="sort">Sort By:</label>
+          <select
+            id="sort"
+            value={sortOption}
+            onChange={(e) => setSortOption(e.target.value)}
+          >
+            <option value="">None</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating-asc">Rating: Low to High</option>
+            <option value="rating-desc">Rating: High to Low</option>
+          </select>
+      </div>
       </div>
     </div>
   );

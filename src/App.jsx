@@ -6,7 +6,8 @@ import AppHeader from './components/AppHeader';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [menuOpen, setMenuOpen] = useState(false); // 🍔 new state
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [sortOption, setSortOption] = useState('');
   const [filters, setFilters] = useState({
     inStock: false,
     category: '',
@@ -15,7 +16,7 @@ function App() {
 
   const categories = [...new Set(products.map(product => product.category))];
 
-  const filteredProducts = products.filter(product => {
+  let filteredProducts = products.filter(product => {
     const matchesSearch =
       product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.category.toLowerCase().includes(searchQuery.toLowerCase());
@@ -27,6 +28,16 @@ function App() {
 
     return matchesSearch && matchesStock && matchesCategory && matchesPrice;
   });
+
+  if (sortOption === 'price-asc') {
+    filteredProducts.sort((a, b) => a.price - b.price);
+  } else if (sortOption === 'price-desc') {
+    filteredProducts.sort((a, b) => b.price - a.price);
+  } else if (sortOption === 'rating-asc') {
+    filteredProducts.sort((a, b) => a.rating - b.rating);
+  } else if (sortOption === 'rating-desc') {
+    filteredProducts.sort((a, b) => b.rating - a.rating);
+  }
 
   return (
     <>
@@ -44,6 +55,8 @@ function App() {
           filters={filters}
           setFilters={setFilters}
           categories={categories}
+          sortOption={sortOption}
+          setSortOption={setSortOption}
         />
 
         <div className="product-section">
