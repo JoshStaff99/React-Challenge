@@ -46,6 +46,11 @@ function App() {
         setMenuOpen={setMenuOpen}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
+        filters={filters}
+        setFilters={setFilters}
+        categories={categories}
+        sortOption={sortOption}
+        setSortOption={setSortOption}
       />
 
       <div className='fake-header'></div>
