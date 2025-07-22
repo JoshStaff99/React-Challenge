@@ -2,14 +2,14 @@
 
 A single-page React application built with **Vite**. This project provides a minimal, modern setup for developing React apps with fast refresh, linting, and optimized builds.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **React**
 - **Vite**
 - **ESLint**
 - **Babel** or **SWC** for Fast Refresh (via Vite plugins)
 
-## 📦 Getting Started
+## Getting Started
 
 ### Prerequisites
 
