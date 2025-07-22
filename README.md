@@ -27,3 +27,12 @@ cd react-challenge
 npm install
 # or
 yarn install
+
+### Running the Development Server
+
+```bash
+npm run dev
+# or
+yarn dev
+
+Once this is done. A localhost: link should display in your workspace terminal. Click the link to then view the live project.
