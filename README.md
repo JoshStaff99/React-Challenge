@@ -1,6 +1,6 @@
 # React-Challenge
 
-A single-page React application built with **Vite**. This project provides a minimal, modern setup for developing React apps with fast refresh, linting, and optimized builds.
+A single-page application (SPA) that displays a list of products and allows users to filter and sort them dynamically.
 
 ## Tech Stack
 
